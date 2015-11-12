@@ -21,7 +21,7 @@ class Square: Item {
     
     init(x: CGFloat, y: CGFloat) {
         super.init(x: x, y: y, h: 75, w: 75)
-        self.backgroundColor = UIColor.blueColor()
+        self.backgroundColor = UIColor(patternImage:UIImage(named: "Crate-1")!)
         
         var dynamicBehavior = UIDynamicItemBehavior(items: [self])
         dynamicBehavior = UIDynamicItemBehavior(items: [self])

@@ -17,6 +17,8 @@ class  Item : UIView {
     {
         super.init(frame: CGRectMake(x, y, h, w))
         
+        
+        
     }
     
     required init(coder aDecoder: NSCoder ){

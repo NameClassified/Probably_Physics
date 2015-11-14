@@ -14,7 +14,7 @@ class PlayModeViewController: UIViewController, UICollisionBehaviorDelegate {
     var allObjects : [Item] = []
     var dynObjects : [UIDynamicItem] = []
     var collisionBehavior = UICollisionBehavior()
-    var gravity : UIGravityBehavior!
+    var gravity : UIPushBehavior!
     
 
     
@@ -40,7 +40,9 @@ class PlayModeViewController: UIViewController, UICollisionBehaviorDelegate {
             collisionBehavior.addItem(index)
         }
 
-        gravity = UIGravityBehavior(items: allObjects)
+        var gravity = UIPushBehavior(items: dynObjects, mode: UIPushBehaviorMode.Continuous)
+        gravity.pushDirection = CGVectorMake(0.0, 4.9)
+        
         dynamicAnimator.addBehavior(gravity)
         
     }
@@ -49,14 +51,13 @@ class PlayModeViewController: UIViewController, UICollisionBehaviorDelegate {
 
     @IBAction func onStuffBeingDragged(sender: UIPanGestureRecognizer) {
         if (sender.state == UIGestureRecognizerState.Began) {
-            
-            for i in allObjects {
-                if CGRectContainsPoint(i.frame, sender.locationInView(view)) {
-                    item = i
-                    gravity.removeItem(item)
-                    
-                    
+                var index = 0
+            for i in dynObjects {
+                
+                if CGRectContainsPoint(i.bounds, sender.locationInView(view)) {
+                    gravity.removeItem(i)
                 }
+                index++
             }
         }
         

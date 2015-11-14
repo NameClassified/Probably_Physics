@@ -39,8 +39,8 @@ class ViewController: UIViewController {
         masterBall.layer.cornerRadius = 15
         masterBall.clipsToBounds = true
         
-        masterBrick.backgroundColor = UIColor.redColor()
-        masterSquare.backgroundColor = UIColor.blueColor()
+        masterBrick.backgroundColor = UIColor(patternImage: UIImage(named: "brick")!)
+        masterSquare.backgroundColor = UIColor(patternImage: UIImage(named: "Crate-1")!)
     }
     
     
@@ -61,25 +61,28 @@ class ViewController: UIViewController {
     }
         
         if CGRectContainsPoint(masterBrick.frame, sender.locationInView(optionsView)) {
-            if masterBrick.backgroundColor == UIColor.redColor() {
+            
+            if brickSelected == false {
                 resetMenu()
                 masterBrick.backgroundColor = UIColor.yellowColor()
                 brickSelected = true
             }
+
             else{
-                masterBrick.backgroundColor = UIColor.redColor()
+                masterBrick.backgroundColor = UIColor(patternImage: UIImage(named: "brick")!)
                 brickSelected = false
             }
+    
             
         }
         if CGRectContainsPoint(masterSquare.frame, sender.locationInView(optionsView)) {
-            if masterSquare.backgroundColor == UIColor.blueColor() {
+            if squareSelected == false {
                 resetMenu()
                 masterSquare.backgroundColor = UIColor.yellowColor()
                 squareSelected = true
             }
             else{
-                masterSquare.backgroundColor = UIColor.blueColor()
+                masterSquare.backgroundColor = UIColor(patternImage: UIImage(named: "Crate-1")!)
                 squareSelected = false
             }
             
@@ -129,8 +132,8 @@ class ViewController: UIViewController {
         ballSelected = false
         brickSelected = false
         squareSelected = false
-        masterBrick.backgroundColor = UIColor.redColor()
-        masterSquare.backgroundColor = UIColor.blueColor()
+        masterBrick.backgroundColor = UIColor(patternImage: UIImage(named: "brick")!)
+        masterSquare.backgroundColor = UIColor(patternImage: UIImage(named: "Crate-1")!)
         masterBall.backgroundColor = UIColor.purpleColor()
         
     }

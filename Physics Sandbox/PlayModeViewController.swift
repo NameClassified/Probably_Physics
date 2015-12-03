@@ -29,6 +29,7 @@ class PlayModeViewController: UIViewController, UICollisionBehaviorDelegate {
             dynObjects.append(index)
             view.addSubview(index)
             dynamicAnimator.addBehavior(index.dynamicBehavior)
+            dynamicAnimator.addBehavior(index.gravity)
 
         }
         collisionBehavior = UICollisionBehavior(items: allObjects)
@@ -40,24 +41,19 @@ class PlayModeViewController: UIViewController, UICollisionBehaviorDelegate {
             collisionBehavior.addItem(index)
         }
 
-        var gravity = UIPushBehavior(items: dynObjects, mode: UIPushBehaviorMode.Continuous)
-        gravity.pushDirection = CGVectorMake(0.0, 4.9)
-        
-        dynamicAnimator.addBehavior(gravity)
-        
     }
     
     var item : Item!
 
     @IBAction func onStuffBeingDragged(sender: UIPanGestureRecognizer) {
         if (sender.state == UIGestureRecognizerState.Began) {
-                var index = 0
-            for i in dynObjects {
-                
-                if CGRectContainsPoint(i.bounds, sender.locationInView(view)) {
-                    gravity.removeItem(i)
+            for index in allObjects {
+                if CGRectContainsPoint(index.frame, sender.locationInView(view)) {
+                    print("tapped")
+                    item = index
+                    dynamicAnimator.removeBehavior(item.dynamicBehavior)
+                    dynamicAnimator.removeBehavior(item.gravity)
                 }
-                index++
             }
         }
         
@@ -67,7 +63,8 @@ class PlayModeViewController: UIViewController, UICollisionBehaviorDelegate {
             a.center = CGPointMake(panGesture.x, panGesture.y)
             dynamicAnimator.updateItemUsingCurrentState(a)
             if sender.state == UIGestureRecognizerState.Ended {
-                gravity.addItem(a)
+                dynamicAnimator.addBehavior(a.dynamicBehavior)
+                dynamicAnimator.addBehavior(a.gravity)
                 item = nil
             }
             

@@ -21,6 +21,7 @@ class  Item : UIView {
         
         
         
+        
     }
     
     required init(coder aDecoder: NSCoder ){

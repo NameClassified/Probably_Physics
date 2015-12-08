@@ -20,8 +20,13 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var masterSquare: UIView!
     
+    @IBOutlet weak var menuButton: UIButton!
     
+    @IBOutlet weak var playButton: UIButton!
     
+    @IBOutlet weak var buttonForReset: UIButton!
+    
+    @IBOutlet weak var stack: UIStackView!
     var ballSelected = false
     var brickSelected = false
     var squareSelected = false
@@ -31,7 +36,9 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        menuButton.backgroundColor = UIColor.cyanColor()
+        playButton.backgroundColor = UIColor.greenColor()
+        buttonForReset.backgroundColor = UIColor.redColor()
         //buildView.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
 
 
@@ -48,13 +55,14 @@ class ViewController: UIViewController {
     
 
     if CGRectContainsPoint(masterBall.frame, sender.locationInView(optionsView)) {
-        if masterBall.backgroundColor == UIColor.purpleColor() {
+        if ballSelected == false {
             resetMenu()
-            masterBall.backgroundColor = UIColor.yellowColor()
+            masterBall.alpha = 0.5
+            
             ballSelected = true
         }
         else{
-            masterBall.backgroundColor = UIColor.purpleColor()
+            masterBall.alpha = 1
             ballSelected = false
         }
         
@@ -64,12 +72,12 @@ class ViewController: UIViewController {
             
             if brickSelected == false {
                 resetMenu()
-                masterBrick.backgroundColor = UIColor.yellowColor()
+                masterBrick.alpha = 0.5
                 brickSelected = true
             }
 
             else{
-                masterBrick.backgroundColor = UIColor(patternImage: UIImage(named: "brick")!)
+                masterBrick.alpha = 1
                 brickSelected = false
             }
     
@@ -78,11 +86,11 @@ class ViewController: UIViewController {
         if CGRectContainsPoint(masterSquare.frame, sender.locationInView(optionsView)) {
             if squareSelected == false {
                 resetMenu()
-                masterSquare.backgroundColor = UIColor.yellowColor()
+                masterSquare.alpha = 0.5
                 squareSelected = true
             }
             else{
-                masterSquare.backgroundColor = UIColor(patternImage: UIImage(named: "Crate-1")!)
+                masterSquare.alpha = 1
                 squareSelected = false
             }
             
@@ -132,9 +140,9 @@ class ViewController: UIViewController {
         ballSelected = false
         brickSelected = false
         squareSelected = false
-        masterBrick.backgroundColor = UIColor(patternImage: UIImage(named: "brick")!)
-        masterSquare.backgroundColor = UIColor(patternImage: UIImage(named: "Crate-1")!)
-        masterBall.backgroundColor = UIColor.purpleColor()
+        masterBrick.alpha = 1
+        masterSquare.alpha = 1
+        masterBall.alpha = 1
         
     }
     
@@ -142,10 +150,15 @@ class ViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         savedItemsArray.items = itemsArray
 
-        let dvc = segue.destinationViewController as! PlayModeViewController
-     
-        dvc.allObjects = itemsArray
+        if segue.identifier == "showPlayController" {
+            let dvc = segue.destinationViewController as! PlayModeViewController
+            dvc.allObjects = itemsArray
+        }
         
+        if segue.identifier == "showMenuController" {
+            let dvc = segue.destinationViewController as! MenuViewController
+            dvc.allObjects = itemsArray
+        }
 
         
         }

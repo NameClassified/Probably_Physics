@@ -2,8 +2,8 @@
 //  PlayModeViewController.swift
 //  Physics Sandbox
 //
-//  Created by caganhawthorne on 7/10/15.
-//  Copyright © 2015 Cagan Hawthorne. All rights reserved.
+//  Created by connorpan on 7/10/15.
+//  Copyright © 2015 Connor Pan. All rights reserved.
 //
 
 import UIKit
@@ -14,8 +14,8 @@ class PlayModeViewController: UIViewController, UICollisionBehaviorDelegate {
     var allObjects : [Item] = []
     var dynObjects : [UIDynamicItem] = []
     var collisionBehavior = UICollisionBehavior()
-    var gravity : UIPushBehavior!
-    
+    var gravity : UIGravityBehavior!
+    var prop : Properties!
 
     
     override func viewDidLoad() {
@@ -29,8 +29,7 @@ class PlayModeViewController: UIViewController, UICollisionBehaviorDelegate {
             dynObjects.append(index)
             view.addSubview(index)
             dynamicAnimator.addBehavior(index.dynamicBehavior)
-            dynamicAnimator.addBehavior(index.gravity)
-
+            
         }
         collisionBehavior = UICollisionBehavior(items: allObjects)
         collisionBehavior.translatesReferenceBoundsIntoBoundary = true
@@ -40,7 +39,9 @@ class PlayModeViewController: UIViewController, UICollisionBehaviorDelegate {
         for index in allObjects {
             collisionBehavior.addItem(index)
         }
-
+        gravity = UIGravityBehavior(items: dynObjects)
+        gravity.magnitude = CGFloat(prop.gravityMag)
+        dynamicAnimator.addBehavior(gravity)
     }
     
     var item : Item!
@@ -49,10 +50,10 @@ class PlayModeViewController: UIViewController, UICollisionBehaviorDelegate {
         if (sender.state == UIGestureRecognizerState.Began) {
             for index in allObjects {
                 if CGRectContainsPoint(index.frame, sender.locationInView(view)) {
-                    print("tapped")
+                    
                     item = index
-                    dynamicAnimator.removeBehavior(item.dynamicBehavior)
-                    dynamicAnimator.removeBehavior(item.gravity)
+                    gravity.removeItem(index)
+                    
                 }
             }
         }
@@ -63,8 +64,7 @@ class PlayModeViewController: UIViewController, UICollisionBehaviorDelegate {
             a.center = CGPointMake(panGesture.x, panGesture.y)
             dynamicAnimator.updateItemUsingCurrentState(a)
             if sender.state == UIGestureRecognizerState.Ended {
-                dynamicAnimator.addBehavior(a.dynamicBehavior)
-                dynamicAnimator.addBehavior(a.gravity)
+                gravity.addItem(a)
                 item = nil
             }
             

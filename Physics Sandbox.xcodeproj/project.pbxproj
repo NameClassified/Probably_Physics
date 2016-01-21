@@ -10,6 +10,7 @@
 		1F980E501B5403E5003F92D6 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F980E4F1B5403E5003F92D6 /* Item.swift */; };
 		1F9C898B1B5045D4008C880C /* Brick.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9C898A1B5045D4008C880C /* Brick.swift */; };
 		CF6800AE1B504BEA007D3424 /* Square.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6800AD1B504BEA007D3424 /* Square.swift */; };
+		CFAD69F21C49C97300A17A85 /* Properties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAD69F11C49C97300A17A85 /* Properties.swift */; };
 		CFD5AFC31C164E7D0065D96F /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD5AFC21C164E7D0065D96F /* MenuViewController.swift */; };
 		EF5406031B502CD70069C5D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5406021B502CD70069C5D4 /* AppDelegate.swift */; };
 		EF5406051B502CD70069C5D4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5406041B502CD70069C5D4 /* ViewController.swift */; };
@@ -44,6 +45,7 @@
 		1F980E4F1B5403E5003F92D6 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		1F9C898A1B5045D4008C880C /* Brick.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Brick.swift; sourceTree = "<group>"; };
 		CF6800AD1B504BEA007D3424 /* Square.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Square.swift; sourceTree = "<group>"; };
+		CFAD69F11C49C97300A17A85 /* Properties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Properties.swift; sourceTree = "<group>"; };
 		CFD5AFC21C164E7D0065D96F /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		EF5405FF1B502CD60069C5D4 /* Physics Sandbox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Physics Sandbox.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF5406021B502CD70069C5D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				CF6800AD1B504BEA007D3424 /* Square.swift */,
 				1F9C898A1B5045D4008C880C /* Brick.swift */,
 				EF5406061B502CD70069C5D4 /* Main.storyboard */,
+				CFAD69F11C49C97300A17A85 /* Properties.swift */,
 				EF5406321B5045080069C5D4 /* Ball.swift */,
 				EF5406301B50375A0069C5D4 /* PlayModeViewController.swift */,
 				CFD5AFC21C164E7D0065D96F /* MenuViewController.swift */,
@@ -284,6 +287,7 @@
 				EF5406351B5420980069C5D4 /* ItemsArray.swift in Sources */,
 				1F980E501B5403E5003F92D6 /* Item.swift in Sources */,
 				EF5406031B502CD70069C5D4 /* AppDelegate.swift in Sources */,
+				CFAD69F21C49C97300A17A85 /* Properties.swift in Sources */,
 				EF5406311B50375A0069C5D4 /* PlayModeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -12,7 +12,7 @@ class Ball: Item {
     
     
     
-    var elasticity = 0.75
+    var elasticity = 0.9
     var density = 0.5
     var resistance = 0.6
     var friction = 0.05

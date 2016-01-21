@@ -31,11 +31,12 @@ class ViewController: UIViewController {
     var brickSelected = false
     var squareSelected = false
     var itemsArray : [Item] = []
-    
+    var property : [Properties] = []
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        property.append(Properties(gravityMag: 1))
         menuButton.backgroundColor = UIColor.cyanColor()
         playButton.backgroundColor = UIColor.greenColor()
         buttonForReset.backgroundColor = UIColor.redColor()
@@ -50,6 +51,9 @@ class ViewController: UIViewController {
         masterSquare.backgroundColor = UIColor(patternImage: UIImage(named: "Crate-1")!)
     }
     
+    @IBAction func onMenuButtonTapped(sender: UIButton) {
+        print ("tapped")
+    }
     
     @IBAction func screenIsTapped(sender: UITapGestureRecognizer) {
     
@@ -153,13 +157,18 @@ class ViewController: UIViewController {
         if segue.identifier == "showPlayController" {
             let dvc = segue.destinationViewController as! PlayModeViewController
             dvc.allObjects = itemsArray
-        }
-        
+            let index = property[0]
+            dvc.prop = index       }
+       
         if segue.identifier == "showMenuController" {
+            print ("loaded1")
             let dvc = segue.destinationViewController as! MenuViewController
             dvc.allObjects = itemsArray
+            let index = property[0]
+            dvc.prop = index
+            
         }
-
+        
         
         }
 

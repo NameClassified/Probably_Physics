@@ -16,8 +16,8 @@ class  Item : UIView {
     init(x: CGFloat, y: CGFloat, h: CGFloat, w: CGFloat)
     {
         super.init(frame: CGRectMake(x, y, h, w))
-        gravity = UIPushBehavior(items:[self], mode: UIPushBehaviorMode.Continuous)
-        gravity.pushDirection = CGVectorMake(0.0, 4.9)
+        //gravity = UIPushBehavior(items:[self], mode: UIPushBehaviorMode.Continuous)
+        //gravity.pushDirection = CGVectorMake(0.0, 4.9)
         
         
         

@@ -8,7 +8,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Physics_Sandbox" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="BYZ-38-t0r" customClass="ViewController" customModule="Physics_Sandbox" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -174,10 +174,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Asa-ti-ngZ">
-                                <rect key="frame" x="20" y="72" width="445" height="30"/>
+                                <rect key="frame" x="20" y="72" width="453" height="30"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="bmj-IX-h41">
-                                        <rect key="frame" x="0.0" y="0.0" width="445" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="453" height="30"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="f5m-GO-0mp">
                                                 <rect key="frame" x="0.0" y="0.0" width="110" height="30"/>
@@ -197,7 +197,7 @@
                                                 </subviews>
                                             </stackView>
                                             <slider opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="100" minValue="0.0" maxValue="200" translatesAutoresizingMaskIntoConstraints="NO" id="PIc-bK-2JQ">
-                                                <rect key="frame" x="129" y="0.0" width="318" height="31"/>
+                                                <rect key="frame" x="129" y="0.0" width="326" height="31"/>
                                                 <connections>
                                                     <action selector="onGravSliderChanged:" destination="qXp-Kc-Vfh" eventType="valueChanged" id="2ec-lS-Pls"/>
                                                 </connections>
@@ -212,10 +212,10 @@
                                     <barButtonItem id="jVB-qQ-ctC"/>
                                 </items>
                             </toolbar>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="6Kc-NS-yx7">
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="6Kc-NS-yx7">
                                 <rect key="frame" x="0.0" y="337" width="667" height="38"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="djh-ce-vD6">
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="djh-ce-vD6">
                                         <rect key="frame" x="0.0" y="0.0" width="223" height="38"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
                                         <state key="normal" title="Reset">
@@ -225,7 +225,7 @@
                                             <action selector="onResetButtonTapped:" destination="qXp-Kc-Vfh" eventType="touchUpInside" id="guz-Z1-B22"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uZh-ny-GL3">
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uZh-ny-GL3">
                                         <rect key="frame" x="223" y="0.0" width="222" height="38"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
                                         <state key="normal" title="Save">
@@ -235,7 +235,7 @@
                                             <action selector="onSaveButtonTapped:" destination="qXp-Kc-Vfh" eventType="touchUpInside" id="ih7-1g-WMs"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Guc-nT-tvd">
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Guc-nT-tvd">
                                         <rect key="frame" x="445" y="0.0" width="223" height="38"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
                                         <state key="normal" title="Done">
@@ -248,10 +248,10 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="RRx-U1-M3i">
-                                <rect key="frame" x="20" y="131" width="444" height="30"/>
+                                <rect key="frame" x="20" y="131" width="452" height="30"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="LSi-JQ-I8t">
-                                        <rect key="frame" x="0.0" y="0.0" width="444" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="452" height="30"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="OU7-Zr-23x">
                                                 <rect key="frame" x="0.0" y="0.0" width="109" height="30"/>
@@ -271,7 +271,7 @@
                                                 </subviews>
                                             </stackView>
                                             <slider opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="100" minValue="0.0" maxValue="200" translatesAutoresizingMaskIntoConstraints="NO" id="JGG-Mz-lf4">
-                                                <rect key="frame" x="128" y="0.0" width="318" height="31"/>
+                                                <rect key="frame" x="128" y="0.0" width="326" height="31"/>
                                                 <connections>
                                                     <action selector="onElasSliderChanged:" destination="qXp-Kc-Vfh" eventType="valueChanged" id="Qx0-ZK-4Fv"/>
                                                 </connections>
@@ -283,8 +283,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="6Kc-NS-yx7" firstAttribute="leading" secondItem="EvL-uc-XUJ" secondAttribute="leading" id="cwt-CW-2BG"/>
-                            <constraint firstAttribute="trailing" secondItem="6Kc-NS-yx7" secondAttribute="trailing" id="iah-zl-v6a"/>
+                            <constraint firstItem="Vtx-6N-wjB" firstAttribute="top" secondItem="6Kc-NS-yx7" secondAttribute="bottom" id="AnY-2O-hdc"/>
+                            <constraint firstItem="6Kc-NS-yx7" firstAttribute="leading" secondItem="EvL-uc-XUJ" secondAttribute="leading" id="cwj-1w-9Md"/>
+                            <constraint firstAttribute="trailing" secondItem="6Kc-NS-yx7" secondAttribute="trailing" id="iCJ-ei-mOb"/>
                         </constraints>
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>

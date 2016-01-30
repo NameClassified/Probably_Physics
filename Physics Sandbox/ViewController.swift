@@ -36,6 +36,9 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let value = UIInterfaceOrientation.LandscapeLeft.rawValue
+        UIDevice.currentDevice().setValue(value, forKey: "orientation")
         property.append(Properties(gravityMag: 1,elas:1))
         menuButton.backgroundColor = UIColor.cyanColor()
         playButton.backgroundColor = UIColor.greenColor()
@@ -50,6 +53,17 @@ class ViewController: UIViewController {
         masterBrick.backgroundColor = UIColor(patternImage: UIImage(named: "brick")!)
         masterSquare.backgroundColor = UIColor(patternImage: UIImage(named: "Crate-1")!)
     }
+    
+    override func didReceiveMemoryWarning() {
+        for item in itemsArray{
+            itemsArray.removeAll()
+        }
+        
+    }
+    override func shouldAutorotate() -> Bool {
+        return true
+    }
+    
     
     @IBAction func onMenuButtonTapped(sender: UIButton) {
         print ("tapped")

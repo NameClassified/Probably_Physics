@@ -10,8 +10,11 @@ import UIKit
 
 class Properties: NSObject {
     var gravityMag : Float = 1
-    convenience init(gravityMag:Float){
+    var elas : Float = 1
+    convenience init(gravityMag:Float, elas:Float){
         self.init()
         self.gravityMag = gravityMag
+        self.elas = elas
+        
     }
 }

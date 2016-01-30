@@ -28,6 +28,7 @@ class PlayModeViewController: UIViewController, UICollisionBehaviorDelegate {
         for index in allObjects {
             dynObjects.append(index)
             view.addSubview(index)
+            index.dynamicBehavior.elasticity = index.dynamicBehavior.elasticity*CGFloat(prop.elas)
             dynamicAnimator.addBehavior(index.dynamicBehavior)
             
         }
@@ -42,6 +43,8 @@ class PlayModeViewController: UIViewController, UICollisionBehaviorDelegate {
         gravity = UIGravityBehavior(items: dynObjects)
         gravity.magnitude = CGFloat(prop.gravityMag)
         dynamicAnimator.addBehavior(gravity)
+        
+
     }
     
     var item : Item!

@@ -36,7 +36,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        property.append(Properties(gravityMag: 1))
+        property.append(Properties(gravityMag: 1,elas:1))
         menuButton.backgroundColor = UIColor.cyanColor()
         playButton.backgroundColor = UIColor.greenColor()
         buttonForReset.backgroundColor = UIColor.redColor()

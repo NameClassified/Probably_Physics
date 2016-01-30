@@ -2,8 +2,8 @@
 //  Brick.swift
 //  Physics Sandbox
 //
-//  Created by travis on 7/10/15.
-//  Copyright © 2015 Cagan Hawthorne. All rights reserved.
+//  Created by Connor Pan on 7/10/15.
+//  Copyright © 2015 Connor Pan. All rights reserved.
 //
 
 import Foundation

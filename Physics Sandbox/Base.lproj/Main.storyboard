@@ -174,21 +174,32 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Asa-ti-ngZ">
-                                <rect key="frame" x="20" y="72" width="588" height="30"/>
+                                <rect key="frame" x="20" y="72" width="445" height="30"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="bmj-IX-h41">
-                                        <rect key="frame" x="0.0" y="0.0" width="588" height="30"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="bmj-IX-h41">
+                                        <rect key="frame" x="0.0" y="0.0" width="445" height="30"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Gravity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VJO-TU-dET">
-                                                <rect key="frame" x="0.0" y="0.0" width="55" height="30"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <slider opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="100" minValue="0.0" maxValue="200" translatesAutoresizingMaskIntoConstraints="NO" id="X25-Za-e12">
-                                                <rect key="frame" x="60" y="0.0" width="530" height="31"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="f5m-GO-0mp">
+                                                <rect key="frame" x="0.0" y="0.0" width="110" height="30"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Gravity:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VJO-TU-dET">
+                                                        <rect key="frame" x="0.0" y="0.0" width="63" height="30"/>
+                                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ix-6q-qCe">
+                                                        <rect key="frame" x="68" y="0.0" width="42" height="30"/>
+                                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <slider opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="100" minValue="0.0" maxValue="200" translatesAutoresizingMaskIntoConstraints="NO" id="PIc-bK-2JQ">
+                                                <rect key="frame" x="129" y="0.0" width="318" height="31"/>
                                                 <connections>
-                                                    <action selector="onGravSliderChanged:" destination="qXp-Kc-Vfh" eventType="valueChanged" id="zSv-Ur-sQG"/>
+                                                    <action selector="onGravSliderChanged:" destination="qXp-Kc-Vfh" eventType="valueChanged" id="2ec-lS-Pls"/>
                                                 </connections>
                                             </slider>
                                         </subviews>
@@ -198,7 +209,7 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hXT-Xt-9nr">
                                 <rect key="frame" x="0.0" y="0.0" width="667" height="44"/>
                                 <items>
-                                    <barButtonItem title="Item" id="jVB-qQ-ctC"/>
+                                    <barButtonItem id="jVB-qQ-ctC"/>
                                 </items>
                             </toolbar>
                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="6Kc-NS-yx7">
@@ -236,6 +247,39 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="RRx-U1-M3i">
+                                <rect key="frame" x="20" y="131" width="444" height="30"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="LSi-JQ-I8t">
+                                        <rect key="frame" x="0.0" y="0.0" width="444" height="30"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="OU7-Zr-23x">
+                                                <rect key="frame" x="0.0" y="0.0" width="109" height="30"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Bounce:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rgt-1V-VkJ">
+                                                        <rect key="frame" x="0.0" y="0.0" width="62" height="30"/>
+                                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ByP-fr-fyW">
+                                                        <rect key="frame" x="67" y="0.0" width="42" height="30"/>
+                                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <slider opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="100" minValue="0.0" maxValue="200" translatesAutoresizingMaskIntoConstraints="NO" id="JGG-Mz-lf4">
+                                                <rect key="frame" x="128" y="0.0" width="318" height="31"/>
+                                                <connections>
+                                                    <action selector="onElasSliderChanged:" destination="qXp-Kc-Vfh" eventType="valueChanged" id="Qx0-ZK-4Fv"/>
+                                                </connections>
+                                            </slider>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -247,7 +291,11 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="doneButton" destination="Guc-nT-tvd" id="WUj-WP-NqZ"/>
-                        <outlet property="gravSlider" destination="X25-Za-e12" id="PaC-6e-zpa"/>
+                        <outlet property="elasLabel" destination="rgt-1V-VkJ" id="QQL-Xp-Nt2"/>
+                        <outlet property="elasMultLabel" destination="ByP-fr-fyW" id="Dbl-eK-dY2"/>
+                        <outlet property="elasSlider" destination="JGG-Mz-lf4" id="fWI-jr-fzw"/>
+                        <outlet property="gMultLabel" destination="9Ix-6q-qCe" id="snd-lK-ib0"/>
+                        <outlet property="gravSlider" destination="PIc-bK-2JQ" id="eGG-3a-SSG"/>
                         <outlet property="gravityLabel" destination="VJO-TU-dET" id="B4m-rs-dht"/>
                         <outlet property="resetButton" destination="djh-ce-vD6" id="oy6-j8-ynq"/>
                         <outlet property="saveButton" destination="uZh-ny-GL3" id="l2v-gE-yDk"/>

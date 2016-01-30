@@ -47,17 +47,17 @@
 		CF6800AD1B504BEA007D3424 /* Square.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Square.swift; sourceTree = "<group>"; };
 		CFAD69F11C49C97300A17A85 /* Properties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Properties.swift; sourceTree = "<group>"; };
 		CFD5AFC21C164E7D0065D96F /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
-		EF5405FF1B502CD60069C5D4 /* Physics Sandbox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Physics Sandbox.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF5405FF1B502CD60069C5D4 /* Probably Physics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Probably Physics.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF5406021B502CD70069C5D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EF5406041B502CD70069C5D4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EF5406071B502CD70069C5D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EF5406091B502CD70069C5D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EF54060C1B502CD70069C5D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EF54060E1B502CD70069C5D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EF5406131B502CD70069C5D4 /* Physics SandboxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Physics SandboxTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF5406131B502CD70069C5D4 /* Probably Physics.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Probably Physics.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF5406171B502CD70069C5D4 /* Physics_SandboxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Physics_SandboxTests.swift; sourceTree = "<group>"; };
 		EF5406191B502CD70069C5D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EF54061E1B502CD70069C5D4 /* Physics SandboxUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Physics SandboxUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF54061E1B502CD70069C5D4 /* Probably Physics.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Probably Physics.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF5406221B502CD70069C5D4 /* Physics_SandboxUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Physics_SandboxUITests.swift; sourceTree = "<group>"; };
 		EF5406241B502CD70069C5D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EF5406301B50375A0069C5D4 /* PlayModeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayModeViewController.swift; sourceTree = "<group>"; wrapsLines = 0; };
@@ -103,9 +103,9 @@
 		EF5406001B502CD60069C5D4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EF5405FF1B502CD60069C5D4 /* Physics Sandbox.app */,
-				EF5406131B502CD70069C5D4 /* Physics SandboxTests.xctest */,
-				EF54061E1B502CD70069C5D4 /* Physics SandboxUITests.xctest */,
+				EF5405FF1B502CD60069C5D4 /* Probably Physics.app */,
+				EF5406131B502CD70069C5D4 /* Probably Physics.xctest */,
+				EF54061E1B502CD70069C5D4 /* Probably Physics.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -152,9 +152,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		EF5405FE1B502CD60069C5D4 /* Physics Sandbox */ = {
+		EF5405FE1B502CD60069C5D4 /* Probably Physics */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EF5406271B502CD80069C5D4 /* Build configuration list for PBXNativeTarget "Physics Sandbox" */;
+			buildConfigurationList = EF5406271B502CD80069C5D4 /* Build configuration list for PBXNativeTarget "Probably Physics" */;
 			buildPhases = (
 				EF5405FB1B502CD60069C5D4 /* Sources */,
 				EF5405FC1B502CD60069C5D4 /* Frameworks */,
@@ -164,14 +164,14 @@
 			);
 			dependencies = (
 			);
-			name = "Physics Sandbox";
+			name = "Probably Physics";
 			productName = "Physics Sandbox";
-			productReference = EF5405FF1B502CD60069C5D4 /* Physics Sandbox.app */;
+			productReference = EF5405FF1B502CD60069C5D4 /* Probably Physics.app */;
 			productType = "com.apple.product-type.application";
 		};
-		EF5406121B502CD70069C5D4 /* Physics SandboxTests */ = {
+		EF5406121B502CD70069C5D4 /* Probably PhysicsTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EF54062A1B502CD80069C5D4 /* Build configuration list for PBXNativeTarget "Physics SandboxTests" */;
+			buildConfigurationList = EF54062A1B502CD80069C5D4 /* Build configuration list for PBXNativeTarget "Probably PhysicsTests" */;
 			buildPhases = (
 				EF54060F1B502CD70069C5D4 /* Sources */,
 				EF5406101B502CD70069C5D4 /* Frameworks */,
@@ -182,14 +182,14 @@
 			dependencies = (
 				EF5406151B502CD70069C5D4 /* PBXTargetDependency */,
 			);
-			name = "Physics SandboxTests";
+			name = "Probably PhysicsTests";
 			productName = "Physics SandboxTests";
-			productReference = EF5406131B502CD70069C5D4 /* Physics SandboxTests.xctest */;
+			productReference = EF5406131B502CD70069C5D4 /* Probably Physics.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		EF54061D1B502CD70069C5D4 /* Physics SandboxUITests */ = {
+		EF54061D1B502CD70069C5D4 /* Probably PhysicsUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EF54062D1B502CD80069C5D4 /* Build configuration list for PBXNativeTarget "Physics SandboxUITests" */;
+			buildConfigurationList = EF54062D1B502CD80069C5D4 /* Build configuration list for PBXNativeTarget "Probably PhysicsUITests" */;
 			buildPhases = (
 				EF54061A1B502CD70069C5D4 /* Sources */,
 				EF54061B1B502CD70069C5D4 /* Frameworks */,
@@ -200,9 +200,9 @@
 			dependencies = (
 				EF5406201B502CD70069C5D4 /* PBXTargetDependency */,
 			);
-			name = "Physics SandboxUITests";
+			name = "Probably PhysicsUITests";
 			productName = "Physics SandboxUITests";
-			productReference = EF54061E1B502CD70069C5D4 /* Physics SandboxUITests.xctest */;
+			productReference = EF54061E1B502CD70069C5D4 /* Probably Physics.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -227,7 +227,7 @@
 					};
 				};
 			};
-			buildConfigurationList = EF5405FA1B502CD60069C5D4 /* Build configuration list for PBXProject "Physics Sandbox" */;
+			buildConfigurationList = EF5405FA1B502CD60069C5D4 /* Build configuration list for PBXProject "Probably Physics" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -240,9 +240,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				EF5405FE1B502CD60069C5D4 /* Physics Sandbox */,
-				EF5406121B502CD70069C5D4 /* Physics SandboxTests */,
-				EF54061D1B502CD70069C5D4 /* Physics SandboxUITests */,
+				EF5405FE1B502CD60069C5D4 /* Probably Physics */,
+				EF5406121B502CD70069C5D4 /* Probably PhysicsTests */,
+				EF54061D1B502CD70069C5D4 /* Probably PhysicsUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -313,12 +313,12 @@
 /* Begin PBXTargetDependency section */
 		EF5406151B502CD70069C5D4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = EF5405FE1B502CD60069C5D4 /* Physics Sandbox */;
+			target = EF5405FE1B502CD60069C5D4 /* Probably Physics */;
 			targetProxy = EF5406141B502CD70069C5D4 /* PBXContainerItemProxy */;
 		};
 		EF5406201B502CD70069C5D4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = EF5405FE1B502CD60069C5D4 /* Physics Sandbox */;
+			target = EF5405FE1B502CD60069C5D4 /* Probably Physics */;
 			targetProxy = EF54061F1B502CD70069C5D4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -432,8 +432,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Physics Sandbox/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.hawthorne.Physics-Sandbox";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pan.Probably-Physics";
+				PRODUCT_NAME = "Probably Physics";
 			};
 			name = Debug;
 		};
@@ -443,8 +443,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Physics Sandbox/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.hawthorne.Physics-Sandbox";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pan.Probably-Physics";
+				PRODUCT_NAME = "Probably Physics";
 			};
 			name = Release;
 		};
@@ -455,8 +455,8 @@
 				INFOPLIST_FILE = "Physics SandboxTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hawthorne.Physics-SandboxTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Physics Sandbox.app/Physics Sandbox";
+				PRODUCT_NAME = "Probably Physics";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Probably Physics.app/Probably Physics";
 			};
 			name = Debug;
 		};
@@ -467,8 +467,8 @@
 				INFOPLIST_FILE = "Physics SandboxTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hawthorne.Physics-SandboxTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Physics Sandbox.app/Physics Sandbox";
+				PRODUCT_NAME = "Probably Physics";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Probably Physics.app/Probably Physics";
 			};
 			name = Release;
 		};
@@ -478,7 +478,7 @@
 				INFOPLIST_FILE = "Physics SandboxUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hawthorne.Physics-SandboxUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Probably Physics";
 				TEST_TARGET_NAME = "Physics Sandbox";
 				USES_XCTRUNNER = YES;
 			};
@@ -490,7 +490,7 @@
 				INFOPLIST_FILE = "Physics SandboxUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hawthorne.Physics-SandboxUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Probably Physics";
 				TEST_TARGET_NAME = "Physics Sandbox";
 				USES_XCTRUNNER = YES;
 			};
@@ -499,7 +499,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		EF5405FA1B502CD60069C5D4 /* Build configuration list for PBXProject "Physics Sandbox" */ = {
+		EF5405FA1B502CD60069C5D4 /* Build configuration list for PBXProject "Probably Physics" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EF5406251B502CD70069C5D4 /* Debug */,
@@ -508,7 +508,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EF5406271B502CD80069C5D4 /* Build configuration list for PBXNativeTarget "Physics Sandbox" */ = {
+		EF5406271B502CD80069C5D4 /* Build configuration list for PBXNativeTarget "Probably Physics" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EF5406281B502CD80069C5D4 /* Debug */,
@@ -517,7 +517,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EF54062A1B502CD80069C5D4 /* Build configuration list for PBXNativeTarget "Physics SandboxTests" */ = {
+		EF54062A1B502CD80069C5D4 /* Build configuration list for PBXNativeTarget "Probably PhysicsTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EF54062B1B502CD80069C5D4 /* Debug */,
@@ -526,7 +526,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EF54062D1B502CD80069C5D4 /* Build configuration list for PBXNativeTarget "Physics SandboxUITests" */ = {
+		EF54062D1B502CD80069C5D4 /* Build configuration list for PBXNativeTarget "Probably PhysicsUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EF54062E1B502CD80069C5D4 /* Debug */,

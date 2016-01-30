@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Physics Sandbox.xcodeproj">
+      location = "self:/Users/cjpan/Desktop/Probably_Physics/Probably Physics.xcodeproj">
    </FileRef>
 </Workspace>

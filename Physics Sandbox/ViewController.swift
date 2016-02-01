@@ -39,6 +39,7 @@ class ViewController: UIViewController {
         
         let value = UIInterfaceOrientation.LandscapeLeft.rawValue
         UIDevice.currentDevice().setValue(value, forKey: "orientation")
+
         property.append(Properties(gravityMag: 1,elas:1))
         menuButton.backgroundColor = UIColor.cyanColor()
         playButton.backgroundColor = UIColor.greenColor()
@@ -67,6 +68,8 @@ class ViewController: UIViewController {
     
     @IBAction func onMenuButtonTapped(sender: UIButton) {
         print ("tapped")
+        
+
     }
     
     @IBAction func screenIsTapped(sender: UITapGestureRecognizer) {
@@ -167,6 +170,7 @@ class ViewController: UIViewController {
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         savedItemsArray.items = itemsArray
+        
 
         if segue.identifier == "showPlayController" {
             let dvc = segue.destinationViewController as! PlayModeViewController

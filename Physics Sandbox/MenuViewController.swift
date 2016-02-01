@@ -29,7 +29,7 @@ class MenuViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+         
         gravSlider.value = (prop.gravityMag)*100
         gMultLabel.text=String(format:"%.2f",gravSlider.value/100)
       

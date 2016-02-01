@@ -20,7 +20,6 @@ class PlayModeViewController: UIViewController, UICollisionBehaviorDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         //self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
             
             dynamicAnimator = UIDynamicAnimator(referenceView: view)

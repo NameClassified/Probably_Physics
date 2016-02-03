@@ -21,7 +21,8 @@ class Square: Item {
     
     init(x: CGFloat, y: CGFloat) {
         super.init(x: x, y: y, h: 75, w: 75)
-        self.backgroundColor = UIColor(patternImage:UIImage(named: "Crate-1")!)
+        self.backgroundColor = UIColor(patternImage: imageResize(UIImage(named:"Crate-1")!, sizeChange: CGSizeMake(self.bounds.width, self.bounds.height)))
+    
         
         var dynamicBehavior = UIDynamicItemBehavior(items: [self])
         dynamicBehavior = UIDynamicItemBehavior(items: [self])
@@ -37,5 +38,17 @@ class Square: Item {
     
     required init(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    func imageResize(imageObj:UIImage, sizeChange:CGSize)-> UIImage {
+        
+        let hasAlpha = false
+        let scale: CGFloat = 0.0 // Automatically use scale factor of main screen
+        
+        UIGraphicsBeginImageContextWithOptions(sizeChange, !hasAlpha, scale)
+        imageObj.drawInRect(CGRect(origin: CGPointZero, size: sizeChange))
+        
+        let scaledImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext() // !!!
+        return scaledImage
     }
 }

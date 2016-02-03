@@ -17,9 +17,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jJ2-1H-xNI">
-                                <rect key="frame" x="0.0" y="64" width="477" height="498"/>
-                            </view>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aft-9D-9OY">
                                 <rect key="frame" x="477" y="64" width="123" height="536"/>
                                 <subviews>
@@ -36,10 +33,13 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.078431372550000003" green="0.64313725489999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="123" id="jmL-Uq-Zbf"/>
                                 </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jJ2-1H-xNI">
+                                <rect key="frame" x="0.0" y="64" width="477" height="498"/>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="wS4-k7-Ubz">
                                 <rect key="frame" x="0.0" y="568" width="477" height="32"/>
@@ -62,7 +62,7 @@
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <segue destination="nzd-F5-SAZ" kind="show" identifier="showPlayController" id="bLC-G8-3g6"/>
+                                            <segue destination="nzd-F5-SAZ" kind="presentation" identifier="showPlayController" id="bLC-G8-3g6"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fSU-RL-rC2">
@@ -127,12 +127,33 @@
                     <view key="view" contentMode="scaleToFill" id="qIz-Ah-hru">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3th-jw-PDg">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="42"/>
+                                <color key="backgroundColor" red="0.078431372550000003" green="0.64313725489999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="25"/>
+                                <state key="normal" title="Rebuild!">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onRebuildButtonTapped:" destination="nzd-F5-SAZ" eventType="touchUpInside" id="OQR-Kw-iSI"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="3th-jw-PDg" firstAttribute="top" secondItem="qIz-Ah-hru" secondAttribute="top" id="IZz-SC-AVT"/>
+                            <constraint firstItem="3th-jw-PDg" firstAttribute="leading" secondItem="qIz-Ah-hru" secondAttribute="leading" id="V0x-LZ-I8L"/>
+                            <constraint firstAttribute="trailing" secondItem="3th-jw-PDg" secondAttribute="trailing" id="lg2-0c-d98"/>
+                        </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="Zp0-3M-D9S" appends="YES" id="mjG-cC-RNd"/>
                         </connections>
                     </view>
+                    <connections>
+                        <outlet property="rebuildButton" destination="3th-jw-PDg" id="zfX-1k-d7H"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xDZ-IQ-Ov4" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <panGestureRecognizer minimumNumberOfTouches="1" id="Zp0-3M-D9S">
@@ -174,10 +195,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Asa-ti-ngZ">
-                                <rect key="frame" x="20" y="72" width="465" height="30"/>
+                                <rect key="frame" x="20" y="72" width="469" height="30"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="bmj-IX-h41">
-                                        <rect key="frame" x="0.0" y="0.0" width="465" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="469" height="30"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="f5m-GO-0mp">
                                                 <rect key="frame" x="0.0" y="0.0" width="110" height="30"/>
@@ -197,7 +218,7 @@
                                                 </subviews>
                                             </stackView>
                                             <slider opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="100" minValue="0.0" maxValue="200" translatesAutoresizingMaskIntoConstraints="NO" id="PIc-bK-2JQ">
-                                                <rect key="frame" x="129" y="0.0" width="338" height="31"/>
+                                                <rect key="frame" x="129" y="0.0" width="342" height="31"/>
                                                 <connections>
                                                     <action selector="onGravSliderChanged:" destination="qXp-Kc-Vfh" eventType="valueChanged" id="2ec-lS-Pls"/>
                                                 </connections>
@@ -206,12 +227,6 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hXT-Xt-9nr">
-                                <rect key="frame" x="0.0" y="0.0" width="667" height="44"/>
-                                <items>
-                                    <barButtonItem id="jVB-qQ-ctC"/>
-                                </items>
-                            </toolbar>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="6Kc-NS-yx7">
                                 <rect key="frame" x="0.0" y="337" width="667" height="38"/>
                                 <subviews>
@@ -248,10 +263,10 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="RRx-U1-M3i">
-                                <rect key="frame" x="20" y="131" width="464" height="30"/>
+                                <rect key="frame" x="20" y="131" width="468" height="30"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="LSi-JQ-I8t">
-                                        <rect key="frame" x="0.0" y="0.0" width="464" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="468" height="30"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="OU7-Zr-23x">
                                                 <rect key="frame" x="0.0" y="0.0" width="109" height="30"/>
@@ -271,7 +286,7 @@
                                                 </subviews>
                                             </stackView>
                                             <slider opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="100" minValue="0.0" maxValue="200" translatesAutoresizingMaskIntoConstraints="NO" id="JGG-Mz-lf4">
-                                                <rect key="frame" x="128" y="0.0" width="338" height="31"/>
+                                                <rect key="frame" x="128" y="0.0" width="342" height="31"/>
                                                 <connections>
                                                     <action selector="onElasSliderChanged:" destination="qXp-Kc-Vfh" eventType="valueChanged" id="Qx0-ZK-4Fv"/>
                                                 </connections>

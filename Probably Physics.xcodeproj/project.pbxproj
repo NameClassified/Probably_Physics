@@ -17,8 +17,8 @@
 		EF5406081B502CD70069C5D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF5406061B502CD70069C5D4 /* Main.storyboard */; };
 		EF54060A1B502CD70069C5D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF5406091B502CD70069C5D4 /* Assets.xcassets */; };
 		EF54060D1B502CD70069C5D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF54060B1B502CD70069C5D4 /* LaunchScreen.storyboard */; };
-		EF5406181B502CD70069C5D4 /* Probably_PhysicsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5406171B502CD70069C5D4 /* Probably_PhysicsTests.swift */; };
-		EF5406231B502CD70069C5D4 /* Probably_PhysicsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5406221B502CD70069C5D4 /* Probably_PhysicsUITests.swift */; };
+		EF5406181B502CD70069C5D4 /* Physics_SandboxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5406171B502CD70069C5D4 /* Physics_SandboxTests.swift */; };
+		EF5406231B502CD70069C5D4 /* Physics_SandboxUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5406221B502CD70069C5D4 /* Physics_SandboxUITests.swift */; };
 		EF5406311B50375A0069C5D4 /* PlayModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5406301B50375A0069C5D4 /* PlayModeViewController.swift */; };
 		EF5406331B5045080069C5D4 /* Ball.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5406321B5045080069C5D4 /* Ball.swift */; };
 		EF5406351B5420980069C5D4 /* ItemsArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5406341B5420980069C5D4 /* ItemsArray.swift */; };
@@ -55,10 +55,10 @@
 		EF54060C1B502CD70069C5D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EF54060E1B502CD70069C5D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EF5406131B502CD70069C5D4 /* Probably Physics.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Probably Physics.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		EF5406171B502CD70069C5D4 /* Probably_PhysicsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Probably_PhysicsTests.swift; sourceTree = "<group>"; };
+		EF5406171B502CD70069C5D4 /* Physics_SandboxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Physics_SandboxTests.swift; sourceTree = "<group>"; };
 		EF5406191B502CD70069C5D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EF54061E1B502CD70069C5D4 /* Probably Physics.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Probably Physics.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		EF5406221B502CD70069C5D4 /* Probably_PhysicsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Probably_PhysicsUITests.swift; sourceTree = "<group>"; };
+		EF5406221B502CD70069C5D4 /* Physics_SandboxUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Physics_SandboxUITests.swift; sourceTree = "<group>"; };
 		EF5406241B502CD70069C5D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EF5406301B50375A0069C5D4 /* PlayModeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayModeViewController.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		EF5406321B5045080069C5D4 /* Ball.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ball.swift; sourceTree = "<group>"; };
@@ -93,9 +93,9 @@
 		EF5405F61B502CD60069C5D4 = {
 			isa = PBXGroup;
 			children = (
-				EF5406011B502CD70069C5D4 /* Probably Physics */,
-				EF5406161B502CD70069C5D4 /* Probably PhysicsTests */,
-				EF5406211B502CD70069C5D4 /* Probably PhysicsUITests */,
+				EF5406011B502CD70069C5D4 /* Physics Sandbox */,
+				EF5406161B502CD70069C5D4 /* Physics SandboxTests */,
+				EF5406211B502CD70069C5D4 /* Physics SandboxUITests */,
 				EF5406001B502CD60069C5D4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -110,7 +110,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		EF5406011B502CD70069C5D4 /* Probably Physics */ = {
+		EF5406011B502CD70069C5D4 /* Physics Sandbox */ = {
 			isa = PBXGroup;
 			children = (
 				EF5406021B502CD70069C5D4 /* AppDelegate.swift */,
@@ -128,27 +128,24 @@
 				EF54060B1B502CD70069C5D4 /* LaunchScreen.storyboard */,
 				EF54060E1B502CD70069C5D4 /* Info.plist */,
 			);
-			name = "Probably Physics";
 			path = "Physics Sandbox";
 			sourceTree = "<group>";
 		};
-		EF5406161B502CD70069C5D4 /* Probably PhysicsTests */ = {
+		EF5406161B502CD70069C5D4 /* Physics SandboxTests */ = {
 			isa = PBXGroup;
 			children = (
-				EF5406171B502CD70069C5D4 /* Probably_PhysicsTests.swift */,
+				EF5406171B502CD70069C5D4 /* Physics_SandboxTests.swift */,
 				EF5406191B502CD70069C5D4 /* Info.plist */,
 			);
-			name = "Probably PhysicsTests";
 			path = "Physics SandboxTests";
 			sourceTree = "<group>";
 		};
-		EF5406211B502CD70069C5D4 /* Probably PhysicsUITests */ = {
+		EF5406211B502CD70069C5D4 /* Physics SandboxUITests */ = {
 			isa = PBXGroup;
 			children = (
-				EF5406221B502CD70069C5D4 /* Probably_PhysicsUITests.swift */,
+				EF5406221B502CD70069C5D4 /* Physics_SandboxUITests.swift */,
 				EF5406241B502CD70069C5D4 /* Info.plist */,
 			);
-			name = "Probably PhysicsUITests";
 			path = "Physics SandboxUITests";
 			sourceTree = "<group>";
 		};
@@ -299,7 +296,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EF5406181B502CD70069C5D4 /* Probably_PhysicsTests.swift in Sources */,
+				EF5406181B502CD70069C5D4 /* Physics_SandboxTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,7 +304,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EF5406231B502CD70069C5D4 /* Probably_PhysicsUITests.swift in Sources */,
+				EF5406231B502CD70069C5D4 /* Physics_SandboxUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

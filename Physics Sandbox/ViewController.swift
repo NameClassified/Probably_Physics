@@ -32,19 +32,21 @@ class ViewController: UIViewController {
     var squareSelected = false
     var itemsArray : [Item] = []
     var property : [Properties] = []
-    
+    let screenSize: CGRect = UIScreen.mainScreen().bounds
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
         let value = UIInterfaceOrientation.LandscapeLeft.rawValue
         UIDevice.currentDevice().setValue(value, forKey: "orientation")
-
         property.append(Properties(gravityMag: 1,elas:1))
         menuButton.backgroundColor = UIColor.cyanColor()
         playButton.backgroundColor = UIColor.greenColor()
         buttonForReset.backgroundColor = UIColor.redColor()
-        //buildView.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
+        view.backgroundColor = UIColor(patternImage: imageResize(UIImage(named:"background")!, sizeChange: CGSizeMake(screenSize.width, screenSize.height)))
+      
 
 
         masterBall.backgroundColor = UIColor.purpleColor()
@@ -52,7 +54,7 @@ class ViewController: UIViewController {
         masterBall.clipsToBounds = true
         
         masterBrick.backgroundColor = UIColor(patternImage: UIImage(named: "brick")!)
-        masterSquare.backgroundColor = UIColor(patternImage: UIImage(named: "Crate-1")!)
+        masterSquare.backgroundColor = UIColor(patternImage: imageResize(UIImage(named:"Crate-1")!, sizeChange: CGSizeMake(masterSquare.bounds.width, masterSquare.bounds.height)))
     }
     
     override func didReceiveMemoryWarning() {
@@ -68,8 +70,6 @@ class ViewController: UIViewController {
     
     @IBAction func onMenuButtonTapped(sender: UIButton) {
         print ("tapped")
-        
-
     }
     
     @IBAction func screenIsTapped(sender: UITapGestureRecognizer) {
@@ -170,7 +170,6 @@ class ViewController: UIViewController {
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         savedItemsArray.items = itemsArray
-        
 
         if segue.identifier == "showPlayController" {
             let dvc = segue.destinationViewController as! PlayModeViewController
@@ -189,6 +188,18 @@ class ViewController: UIViewController {
         
         
         }
+    func imageResize(imageObj:UIImage, sizeChange:CGSize)-> UIImage {
+        
+        let hasAlpha = false
+        let scale: CGFloat = 0.0 // Automatically use scale factor of main screen
+        
+        UIGraphicsBeginImageContextWithOptions(sizeChange, !hasAlpha, scale)
+        imageObj.drawInRect(CGRect(origin: CGPointZero, size: sizeChange))
+        
+        let scaledImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext() // !!!
+        return scaledImage
+    }
 
 
 }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreMotion
 
 class PlayModeViewController: UIViewController, UICollisionBehaviorDelegate {
     
@@ -16,12 +17,16 @@ class PlayModeViewController: UIViewController, UICollisionBehaviorDelegate {
     var collisionBehavior = UICollisionBehavior()
     var gravity : UIGravityBehavior!
     var prop : Properties!
+    let screenSize: CGRect = UIScreen.mainScreen().bounds
 
+    @IBOutlet weak var rebuildButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
-            
+        
+        self.view.backgroundColor = UIColor(patternImage: imageResize(UIImage(named:"background")!, sizeChange: CGSizeMake(screenSize.width, screenSize.height)))
+        
+        
             dynamicAnimator = UIDynamicAnimator(referenceView: view)
 
         for index in allObjects {
@@ -73,4 +78,20 @@ class PlayModeViewController: UIViewController, UICollisionBehaviorDelegate {
         }
             }
 
+    @IBAction func onRebuildButtonTapped(sender: UIButton) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func imageResize(imageObj:UIImage, sizeChange:CGSize)-> UIImage {
+        
+        let hasAlpha = false
+        let scale: CGFloat = 0.0
+        
+        UIGraphicsBeginImageContextWithOptions(sizeChange, !hasAlpha, scale)
+        imageObj.drawInRect(CGRect(origin: CGPointZero, size: sizeChange))
+        
+        let scaledImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext() // !!!
+        return scaledImage
+    }
 }

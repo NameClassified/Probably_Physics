@@ -26,6 +26,7 @@ class PlayModeViewController: UIViewController, UICollisionBehaviorDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         if motionManager.accelerometerAvailable {
             motionManager.accelerometerUpdateInterval = 0.1
             motionManager.startAccelerometerUpdatesToQueue(NSOperationQueue()) {
@@ -35,7 +36,7 @@ class PlayModeViewController: UIViewController, UICollisionBehaviorDelegate {
                     var yy = data!.acceleration.y
                     
                     self.gravity.angle = CGFloat(atan2(xx, yy))
-            }
+                    }
 
 
             
@@ -108,6 +109,7 @@ class PlayModeViewController: UIViewController, UICollisionBehaviorDelegate {
             }
 
     @IBAction func onRebuildButtonTapped(sender: UIButton) {
+        motionManager.stopAccelerometerUpdates()
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     

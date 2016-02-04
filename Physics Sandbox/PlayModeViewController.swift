@@ -18,11 +18,31 @@ class PlayModeViewController: UIViewController, UICollisionBehaviorDelegate {
     var gravity : UIGravityBehavior!
     var prop : Properties!
     let screenSize: CGRect = UIScreen.mainScreen().bounds
+    
+    var motionManager = CMMotionManager()
+
 
     @IBOutlet weak var rebuildButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if motionManager.accelerometerAvailable {
+            motionManager.accelerometerUpdateInterval = 0.1
+            motionManager.startAccelerometerUpdatesToQueue(NSOperationQueue()) {
+                (data, error) in
+                dispatch_async(dispatch_get_main_queue()) {
+                    var xx = data!.acceleration.x
+                    var yy = data!.acceleration.y
+                    
+                    self.gravity.angle = CGFloat(atan2(xx, yy))
+            }
+
+
+            
+            }
+        }
+
+        
         
         self.view.backgroundColor = UIColor(patternImage: imageResize(UIImage(named:"background")!, sizeChange: CGSizeMake(screenSize.width, screenSize.height)))
         
@@ -46,9 +66,18 @@ class PlayModeViewController: UIViewController, UICollisionBehaviorDelegate {
         }
         gravity = UIGravityBehavior(items: dynObjects)
         gravity.magnitude = CGFloat(prop.gravityMag)
+        
+
         dynamicAnimator.addBehavior(gravity)
         
 
+    }
+    
+    override func didReceiveMemoryWarning() {
+            allObjects.removeAll()
+            dynObjects.removeAll()
+        
+        
     }
     
     var item : Item!
@@ -94,4 +123,6 @@ class PlayModeViewController: UIViewController, UICollisionBehaviorDelegate {
         UIGraphicsEndImageContext() // !!!
         return scaledImage
     }
+    
+
 }

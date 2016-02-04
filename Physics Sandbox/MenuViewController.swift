@@ -58,6 +58,7 @@ class MenuViewController: UIViewController {
     @IBAction func onSaveButtonTapped(sender: UIButton) {
         prop.gravityMag = Float((gravSlider.value)/100)
         prop.elas = Float((elasSlider.value)/100)
+        self.dismissViewControllerAnimated(true, completion: nil)
 
     }
 

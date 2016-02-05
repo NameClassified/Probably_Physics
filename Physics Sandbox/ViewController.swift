@@ -36,15 +36,14 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        let ppBlue = UIColor(red: 25, green: 144, blue: 255,alpha: 1.0)
+            optionsView.backgroundColor =  optionsView.backgroundColor!.colorWithAlphaComponent(0.7)
         
         
         let value = UIInterfaceOrientation.LandscapeLeft.rawValue
         UIDevice.currentDevice().setValue(value, forKey: "orientation")
         property.append(Properties(gravityMag: 1,elas:1))
-        menuButton.backgroundColor = UIColor.cyanColor()
-        playButton.backgroundColor = UIColor.greenColor()
-        buttonForReset.backgroundColor = UIColor.redColor()
+        
         view.backgroundColor = UIColor(patternImage: imageResize(UIImage(named:"background")!, sizeChange: CGSizeMake(screenSize.width, screenSize.height)))
       
 

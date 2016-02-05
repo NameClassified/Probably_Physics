@@ -29,7 +29,9 @@ class MenuViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.modalPresentationStyle = UIModalPresentationStyle.OverCurrentContext
+
+        view.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.5)
         gravSlider.value = (prop.gravityMag)*100
         gMultLabel.text=String(format:"%.2f",gravSlider.value/100)
       
@@ -37,9 +39,9 @@ class MenuViewController: UIViewController {
         elasMultLabel.text = String(format:"%.2f",prop.elas)
         
        // Do any additional setup after loading the view.
-        saveButton.backgroundColor = UIColor.cyanColor()
-        doneButton.backgroundColor = UIColor.greenColor()
-        resetButton.backgroundColor = UIColor.redColor()
+       // saveButton.backgroundColor = UIColor.cyanColor()
+       // doneButton.backgroundColor = UIColor.greenColor()
+       // resetButton.backgroundColor = UIColor.redColor()
     
     }
 

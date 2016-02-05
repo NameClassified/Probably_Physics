@@ -33,7 +33,7 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" red="0.078431372550000003" green="0.64313725489999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.20000000000000001" green="0.62352941176470589" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="123" id="jmL-Uq-Zbf"/>
                                 </constraints>
@@ -46,20 +46,22 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P69-qw-DLB">
                                         <rect key="frame" x="0.0" y="0.0" width="159" height="32"/>
-                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
+                                        <color key="backgroundColor" red="0.078431372550000003" green="0.64313725489999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="15"/>
                                         <state key="normal" title="Menu">
-                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
                                             <action selector="onMenuButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yht-Fr-s1O"/>
-                                            <segue destination="qXp-Kc-Vfh" kind="presentation" identifier="showMenuController" id="N6R-lR-x3a"/>
+                                            <segue destination="qXp-Kc-Vfh" kind="presentation" identifier="showMenuController" modalPresentationStyle="overCurrentContext" id="N6R-lR-x3a"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bMV-rC-Y4c">
                                         <rect key="frame" x="159" y="0.0" width="159" height="32"/>
-                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
+                                        <color key="backgroundColor" red="0.078431372550000003" green="0.64313725489999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="15"/>
                                         <state key="normal" title="Play">
-                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
                                             <segue destination="nzd-F5-SAZ" kind="presentation" identifier="showPlayController" id="bLC-G8-3g6"/>
@@ -67,9 +69,10 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fSU-RL-rC2">
                                         <rect key="frame" x="318" y="0.0" width="159" height="32"/>
-                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
+                                        <color key="backgroundColor" red="0.078431372550000003" green="0.64313725489999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="15"/>
                                         <state key="normal" title="Reset">
-                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
                                             <action selector="resetButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1tB-Xa-wyM"/>
@@ -190,15 +193,15 @@
                         <viewControllerLayoutGuide type="top" id="pbd-jK-NOK"/>
                         <viewControllerLayoutGuide type="bottom" id="Vtx-6N-wjB"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="EvL-uc-XUJ">
+                    <view key="view" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="EvL-uc-XUJ">
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Asa-ti-ngZ">
-                                <rect key="frame" x="20" y="72" width="469" height="30"/>
+                                <rect key="frame" x="20" y="72" width="521" height="30"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="bmj-IX-h41">
-                                        <rect key="frame" x="0.0" y="0.0" width="469" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="521" height="30"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="f5m-GO-0mp">
                                                 <rect key="frame" x="0.0" y="0.0" width="110" height="30"/>
@@ -218,7 +221,7 @@
                                                 </subviews>
                                             </stackView>
                                             <slider opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="100" minValue="0.0" maxValue="200" translatesAutoresizingMaskIntoConstraints="NO" id="PIc-bK-2JQ">
-                                                <rect key="frame" x="129" y="0.0" width="342" height="31"/>
+                                                <rect key="frame" x="129" y="0.0" width="394" height="31"/>
                                                 <connections>
                                                     <action selector="onGravSliderChanged:" destination="qXp-Kc-Vfh" eventType="valueChanged" id="2ec-lS-Pls"/>
                                                 </connections>
@@ -232,9 +235,10 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="djh-ce-vD6">
                                         <rect key="frame" x="0.0" y="0.0" width="223" height="38"/>
-                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                        <color key="backgroundColor" red="0.078431372550000003" green="0.64313725489999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="20"/>
                                         <state key="normal" title="Reset">
-                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
                                             <action selector="onResetButtonTapped:" destination="qXp-Kc-Vfh" eventType="touchUpInside" id="guz-Z1-B22"/>
@@ -242,9 +246,10 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uZh-ny-GL3">
                                         <rect key="frame" x="223" y="0.0" width="222" height="38"/>
-                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                        <color key="backgroundColor" red="0.078431372550000003" green="0.64313725489999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="20"/>
                                         <state key="normal" title="Save">
-                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
                                             <action selector="onSaveButtonTapped:" destination="qXp-Kc-Vfh" eventType="touchUpInside" id="ih7-1g-WMs"/>
@@ -252,9 +257,10 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Guc-nT-tvd">
                                         <rect key="frame" x="445" y="0.0" width="223" height="38"/>
-                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                        <color key="backgroundColor" red="0.078431372550000003" green="0.64313725489999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="20"/>
                                         <state key="normal" title="Done">
-                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
                                             <action selector="onDoneButtonTapped:" destination="qXp-Kc-Vfh" eventType="touchUpInside" id="WlI-gq-Y5R"/>
@@ -263,10 +269,10 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="RRx-U1-M3i">
-                                <rect key="frame" x="20" y="131" width="468" height="30"/>
+                                <rect key="frame" x="20" y="131" width="520" height="30"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="LSi-JQ-I8t">
-                                        <rect key="frame" x="0.0" y="0.0" width="468" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="520" height="30"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="OU7-Zr-23x">
                                                 <rect key="frame" x="0.0" y="0.0" width="109" height="30"/>
@@ -286,7 +292,7 @@
                                                 </subviews>
                                             </stackView>
                                             <slider opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="100" minValue="0.0" maxValue="200" translatesAutoresizingMaskIntoConstraints="NO" id="JGG-Mz-lf4">
-                                                <rect key="frame" x="128" y="0.0" width="342" height="31"/>
+                                                <rect key="frame" x="128" y="0.0" width="394" height="31"/>
                                                 <connections>
                                                     <action selector="onElasSliderChanged:" destination="qXp-Kc-Vfh" eventType="valueChanged" id="Qx0-ZK-4Fv"/>
                                                 </connections>

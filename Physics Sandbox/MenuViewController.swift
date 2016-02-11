@@ -69,14 +69,14 @@ class MenuViewController: UIViewController {
     }
 
     @IBAction func onGravSliderChanged(sender: UISlider) {
-        var currentValue = Float(sender.value)
-        var gmult = currentValue/Float(100.0)
+        let currentValue = Float(sender.value)
+        let gmult = currentValue/Float(100.0)
         gMultLabel.text = String(format: "%.2f",gmult)
     }
 
     @IBAction func onElasSliderChanged(sender: UISlider) {
-        var currentValue = Float(sender.value)
-        var elasMult = currentValue/100.0
+        let currentValue = Float(sender.value)
+        let elasMult = currentValue/100.0
         elasMultLabel.text = String(format:"%.2f",elasMult)
     }
 

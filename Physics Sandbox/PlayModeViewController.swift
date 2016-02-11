@@ -32,8 +32,8 @@ class PlayModeViewController: UIViewController, UICollisionBehaviorDelegate {
             motionManager.startAccelerometerUpdatesToQueue(NSOperationQueue()) {
                 (data, error) in
                 dispatch_async(dispatch_get_main_queue()) {
-                    var xx = data!.acceleration.x
-                    var yy = data!.acceleration.y
+                    let xx = data!.acceleration.x
+                    let yy = data!.acceleration.y
                     
                     self.gravity.angle = CGFloat(atan2(xx, yy))
                     }

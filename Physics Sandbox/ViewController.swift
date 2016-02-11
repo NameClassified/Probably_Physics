@@ -8,6 +8,7 @@
 
 import UIKit
 
+@available(iOS 9.0, *)
 class ViewController: UIViewController {
 
     @IBOutlet weak var optionsView: UIView!
@@ -27,6 +28,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var buttonForReset: UIButton!
     
     @IBOutlet weak var stack: UIStackView!
+    
+    
     var ballSelected = false
     var brickSelected = false
     var squareSelected = false
@@ -36,7 +39,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let ppBlue = UIColor(red: 25, green: 144, blue: 255,alpha: 1.0)
+
             optionsView.backgroundColor =  optionsView.backgroundColor!.colorWithAlphaComponent(0.7)
         
         

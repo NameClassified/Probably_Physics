@@ -67,7 +67,7 @@ class MenuViewController: UIViewController {
            
             self.dismissViewControllerAnimated(true, completion: { () -> Void in
                 let viewController = UIApplication.sharedApplication().windows[0].rootViewController?.childViewControllers[0] as? ViewController
-                viewController?.changeBackground(true)
+                viewController?.changeBackground(false)
             })
             
         }

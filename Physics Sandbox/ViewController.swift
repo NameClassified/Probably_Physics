@@ -9,7 +9,7 @@
 import UIKit
 
 @available(iOS 9.0, *)
-class ViewController: UIViewController {
+class ViewController: UIViewController{
 
     @IBOutlet weak var optionsView: UIView!
     
@@ -36,20 +36,22 @@ class ViewController: UIViewController {
     var itemsArray : [Item] = []
     var property : [Properties] = []
     let screenSize: CGRect = UIScreen.mainScreen().bounds
+    var space = false
+    
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-            optionsView.backgroundColor =  optionsView.backgroundColor!.colorWithAlphaComponent(0.7)
-        
+            changeBackground(space)
+            print("menu test")
+            optionsView.backgroundColor =  optionsView.backgroundColor?.colorWithAlphaComponent(0.7)
         
         let value = UIInterfaceOrientation.LandscapeLeft.rawValue
         UIDevice.currentDevice().setValue(value, forKey: "orientation")
         property.append(Properties(gravityMag: 1,elas:1))
         
-        view.backgroundColor = UIColor(patternImage: imageResize(UIImage(named:"background")!, sizeChange: CGSizeMake(screenSize.width, screenSize.height)))
-      
 
+      
 
         masterBall.backgroundColor = UIColor.purpleColor()
         masterBall.layer.cornerRadius = 15
@@ -59,6 +61,14 @@ class ViewController: UIViewController {
         masterSquare.backgroundColor = UIColor(patternImage: imageResize(UIImage(named:"Crate-1")!, sizeChange: CGSizeMake(masterSquare.bounds.width, masterSquare.bounds.height)))
     }
     
+    func changeBackground(space: Bool) {
+        if space == false {
+            view.backgroundColor = UIColor(patternImage: imageResize(UIImage(named:"background")!, sizeChange: CGSizeMake(screenSize.width, screenSize.height)))
+        }
+        else {
+            view.backgroundColor = UIColor(patternImage: imageResize(UIImage(named:"space")!, sizeChange: CGSizeMake(screenSize.width, screenSize.height)))
+        }
+    }
     override func didReceiveMemoryWarning() {
         for item in itemsArray{
             itemsArray.removeAll()
@@ -66,7 +76,7 @@ class ViewController: UIViewController {
         
     }
     override func shouldAutorotate() -> Bool {
-        return true
+        return false
     }
     
     
@@ -181,7 +191,8 @@ class ViewController: UIViewController {
        
         if segue.identifier == "showMenuController" {
             print ("loaded1")
-            let dvc = segue.destinationViewController as! MenuViewController
+            var dvc = segue.destinationViewController as! MenuViewController
+
             dvc.allObjects = itemsArray
             let index = property[0]
             dvc.prop = index
@@ -203,6 +214,15 @@ class ViewController: UIViewController {
         return scaledImage
     }
 
-
+    func spaceMode(isModeTrue: Bool) {
+        if isModeTrue == true {
+            view.backgroundColor = UIColor(patternImage: imageResize(UIImage(named:"space")!, sizeChange: CGSizeMake(screenSize.width, screenSize.height)))
+            space = true
+        }
+        else {
+            space = false
+            view.backgroundColor = UIColor(patternImage: imageResize(UIImage(named:"background")!, sizeChange: CGSizeMake(screenSize.width, screenSize.height)))
+        }
+    }
 }
 

@@ -19,14 +19,16 @@ class PlayModeViewController: UIViewController, UICollisionBehaviorDelegate {
     var prop : Properties!
     let screenSize: CGRect = UIScreen.mainScreen().bounds
     
+    let pi = M_PI
+    
     var motionManager = CMMotionManager()
 
 
     @IBOutlet weak var rebuildButton: UIButton!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         if motionManager.accelerometerAvailable {
             motionManager.accelerometerUpdateInterval = 0.1
             motionManager.startAccelerometerUpdatesToQueue(NSOperationQueue()) {
@@ -41,12 +43,15 @@ class PlayModeViewController: UIViewController, UICollisionBehaviorDelegate {
 
             
             }
+            
         }
-
         
-        
-        self.view.backgroundColor = UIColor(patternImage: imageResize(UIImage(named:"background")!, sizeChange: CGSizeMake(screenSize.width, screenSize.height)))
-        
+        if prop.gravityMag == 0.00101936799 {
+            self.view.backgroundColor = UIColor(patternImage: imageResize(UIImage(named: "space")!, sizeChange: CGSizeMake(screenSize.width,screenSize.height)))
+        }
+        else {
+            self.view.backgroundColor = UIColor(patternImage: imageResize(UIImage(named:"background")!, sizeChange: CGSizeMake(screenSize.width, screenSize.height)))
+        }
         
             dynamicAnimator = UIDynamicAnimator(referenceView: view)
 
@@ -73,7 +78,7 @@ class PlayModeViewController: UIViewController, UICollisionBehaviorDelegate {
         
 
     }
-    
+
     override func didReceiveMemoryWarning() {
             allObjects.removeAll()
             dynObjects.removeAll()
@@ -101,6 +106,13 @@ class PlayModeViewController: UIViewController, UICollisionBehaviorDelegate {
             a.center = CGPointMake(panGesture.x, panGesture.y)
             dynamicAnimator.updateItemUsingCurrentState(a)
             if sender.state == UIGestureRecognizerState.Ended {
+                let dragVelocity = sender.velocityInView(view)
+                
+                var dragPush = UIPushBehavior(items: [a], mode: UIPushBehaviorMode.Instantaneous)
+                dragPush.pushDirection = CGVectorMake(dragVelocity.x, dragVelocity.y)
+                dragPush.magnitude = sqrt((dragVelocity.x*dragVelocity.x)+(dragVelocity.y*dragVelocity.y))/500
+                dynamicAnimator.addBehavior(dragPush)
+                
                 gravity.addItem(a)
                 item = nil
             }

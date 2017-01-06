@@ -35,7 +35,7 @@ class ViewController: UIViewController{
     var squareSelected = false
     var itemsArray : [Item] = []
     var property : [Properties] = []
-    let screenSize: CGRect = UIScreen.mainScreen().bounds
+    let screenSize: CGRect = UIScreen.main.bounds
     var space = false
     
    
@@ -44,29 +44,29 @@ class ViewController: UIViewController{
         super.viewDidLoad()
             changeBackground(space)
             print("menu test")
-            optionsView.backgroundColor =  optionsView.backgroundColor?.colorWithAlphaComponent(0.7)
+            optionsView.backgroundColor =  optionsView.backgroundColor?.withAlphaComponent(0.7)
         
-        let value = UIInterfaceOrientation.LandscapeLeft.rawValue
-        UIDevice.currentDevice().setValue(value, forKey: "orientation")
+        let value = UIInterfaceOrientation.landscapeLeft.rawValue
+        UIDevice.current.setValue(value, forKey: "orientation")
         property.append(Properties(gravityMag: 1,elas:1))
         
 
       
 
-        masterBall.backgroundColor = UIColor.purpleColor()
+        masterBall.backgroundColor = UIColor.purple
         masterBall.layer.cornerRadius = 15
         masterBall.clipsToBounds = true
         
         masterBrick.backgroundColor = UIColor(patternImage: UIImage(named: "brick")!)
-        masterSquare.backgroundColor = UIColor(patternImage: imageResize(UIImage(named:"Crate-1")!, sizeChange: CGSizeMake(masterSquare.bounds.width, masterSquare.bounds.height)))
+        masterSquare.backgroundColor = UIColor(patternImage: imageResize(UIImage(named:"Crate-1")!, sizeChange: CGSize(width: masterSquare.bounds.width, height: masterSquare.bounds.height)))
     }
     
-    func changeBackground(space: Bool) {
+    func changeBackground(_ space: Bool) {
         if space == false {
-            view.backgroundColor = UIColor(patternImage: imageResize(UIImage(named:"background")!, sizeChange: CGSizeMake(screenSize.width, screenSize.height)))
+            view.backgroundColor = UIColor(patternImage: imageResize(UIImage(named:"background")!, sizeChange: CGSize(width: screenSize.width, height: screenSize.height)))
         }
         else {
-            view.backgroundColor = UIColor(patternImage: imageResize(UIImage(named:"space")!, sizeChange: CGSizeMake(screenSize.width, screenSize.height)))
+            view.backgroundColor = UIColor(patternImage: imageResize(UIImage(named:"space")!, sizeChange: CGSize(width: screenSize.width, height: screenSize.height)))
         }
     }
     override func didReceiveMemoryWarning() {
@@ -75,19 +75,19 @@ class ViewController: UIViewController{
         }
         
     }
-    override func shouldAutorotate() -> Bool {
+    override var shouldAutorotate : Bool {
         return false
     }
     
     
-    @IBAction func onMenuButtonTapped(sender: UIButton) {
+    @IBAction func onMenuButtonTapped(_ sender: UIButton) {
         print ("tapped")
     }
     
-    @IBAction func screenIsTapped(sender: UITapGestureRecognizer) {
+    @IBAction func screenIsTapped(_ sender: UITapGestureRecognizer) {
     
 
-    if CGRectContainsPoint(masterBall.frame, sender.locationInView(optionsView)) {
+    if masterBall.frame.contains(sender.location(in: optionsView)) {
         if ballSelected == false {
             resetMenu()
             masterBall.alpha = 0.5
@@ -101,7 +101,7 @@ class ViewController: UIViewController{
         
     }
         
-        if CGRectContainsPoint(masterBrick.frame, sender.locationInView(optionsView)) {
+        if masterBrick.frame.contains(sender.location(in: optionsView)) {
             
             if brickSelected == false {
                 resetMenu()
@@ -116,11 +116,12 @@ class ViewController: UIViewController{
     
             
         }
-        if CGRectContainsPoint(masterSquare.frame, sender.locationInView(optionsView)) {
+        if masterSquare.frame.contains(sender.location(in: optionsView)) {
             if squareSelected == false {
                 resetMenu()
                 masterSquare.alpha = 0.5
                 squareSelected = true
+                print ("square selected")
             }
             else{
                 masterSquare.alpha = 1
@@ -131,35 +132,33 @@ class ViewController: UIViewController{
 
         
         
-        
-        
-        
-        
-        
-        
-        if CGRectContainsPoint(buildView.frame, sender.locationInView(view)) {
-            let tapGesture = sender.locationInView(view)
+        if view.frame.contains(sender.location(in: buildView)) && !(view.frame.contains(sender.location(in:optionsView))) {
+            let tapGesture = sender.location(in: view)
+            print ("build screen tapped")
 
             if ballSelected {
                 let ball = Ball(x: CGFloat(tapGesture.x-10), y: CGFloat(tapGesture.y-40))
                 buildView.addSubview(ball)
                 itemsArray.append(ball)
+                view.bringSubview(toFront: optionsView)
             }
             else if brickSelected {
                 let brick = Brick(x: CGFloat(tapGesture.x-30), y: CGFloat(tapGesture.y-50))
                 buildView.addSubview(brick)
                 itemsArray.append(brick)
+                view.bringSubview(toFront: optionsView)
             }
             else if squareSelected {
                 let square = Square(x: CGFloat(tapGesture.x-37), y: CGFloat(tapGesture.y-70))
                 buildView.addSubview(square)
                 itemsArray.append(square)
+                view.bringSubview(toFront: optionsView)
             }
         }
     }
     
     
-    @IBAction func resetButtonTapped(sender: UIButton) {
+    @IBAction func resetButtonTapped(_ sender: UIButton) {
         for e in itemsArray {
             e.removeFromSuperview()
         }
@@ -180,18 +179,18 @@ class ViewController: UIViewController{
     }
     
 
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         savedItemsArray.items = itemsArray
 
         if segue.identifier == "showPlayController" {
-            let dvc = segue.destinationViewController as! PlayModeViewController
+            let dvc = segue.destination as! PlayModeViewController
             dvc.allObjects = itemsArray
             let index = property[0]
             dvc.prop = index       }
        
         if segue.identifier == "showMenuController" {
             print ("loaded1")
-            var dvc = segue.destinationViewController as! MenuViewController
+            let dvc = segue.destination as! MenuViewController
 
             dvc.allObjects = itemsArray
             let index = property[0]
@@ -201,27 +200,27 @@ class ViewController: UIViewController{
         
         
         }
-    func imageResize(imageObj:UIImage, sizeChange:CGSize)-> UIImage {
+    func imageResize(_ imageObj:UIImage, sizeChange:CGSize)-> UIImage {
         
         let hasAlpha = false
         let scale: CGFloat = 0.0 // Automatically use scale factor of main screen
         
         UIGraphicsBeginImageContextWithOptions(sizeChange, !hasAlpha, scale)
-        imageObj.drawInRect(CGRect(origin: CGPointZero, size: sizeChange))
+        imageObj.draw(in: CGRect(origin: CGPoint.zero, size: sizeChange))
         
         let scaledImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext() // !!!
-        return scaledImage
+        return scaledImage!
     }
 
-    func spaceMode(isModeTrue: Bool) {
+    func spaceMode(_ isModeTrue: Bool) {
         if isModeTrue == true {
-            view.backgroundColor = UIColor(patternImage: imageResize(UIImage(named:"space")!, sizeChange: CGSizeMake(screenSize.width, screenSize.height)))
+            view.backgroundColor = UIColor(patternImage: imageResize(UIImage(named:"space")!, sizeChange: CGSize(width: screenSize.width, height: screenSize.height)))
             space = true
         }
         else {
             space = false
-            view.backgroundColor = UIColor(patternImage: imageResize(UIImage(named:"background")!, sizeChange: CGSizeMake(screenSize.width, screenSize.height)))
+            view.backgroundColor = UIColor(patternImage: imageResize(UIImage(named:"background")!, sizeChange: CGSize(width: screenSize.width, height: screenSize.height)))
         }
     }
 }

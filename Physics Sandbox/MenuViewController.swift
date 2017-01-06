@@ -30,9 +30,9 @@ class MenuViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.modalPresentationStyle = UIModalPresentationStyle.OverCurrentContext
+        self.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
 
-        view.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.5)
+        view.backgroundColor = UIColor.white.withAlphaComponent(0.5)
         
         if prop.gravityMag != 0.00101936799 {
             gravSlider.value = (prop.gravityMag)*100
@@ -48,7 +48,7 @@ class MenuViewController: UIViewController {
     
     }
     
-    @IBAction func onResetButtonTapped(sender: UIButton) {
+    @IBAction func onResetButtonTapped(_ sender: UIButton) {
         gravSlider.value = 100
         prop.gravityMag = Float((gravSlider.value)/100)
         gMultLabel.text=String(format:"%.2f",gravSlider.value/100)
@@ -60,13 +60,13 @@ class MenuViewController: UIViewController {
         
     }
 
-    @IBAction func onSaveButtonTapped(sender: UIButton) {
+    @IBAction func onSaveButtonTapped(_ sender: UIButton) {
         if gravSlider.value != 0{
             prop.gravityMag = Float((gravSlider.value)/100)
             prop.elas = Float((elasSlider.value)/100)
            
-            self.dismissViewControllerAnimated(true, completion: { () -> Void in
-                let viewController = UIApplication.sharedApplication().windows[0].rootViewController?.childViewControllers[0] as? ViewController
+            self.dismiss(animated: true, completion: { () -> Void in
+                let viewController = UIApplication.shared.windows[0].rootViewController?.childViewControllers[0] as? ViewController
                 viewController?.changeBackground(false)
             })
             
@@ -76,20 +76,20 @@ class MenuViewController: UIViewController {
             
             prop.elas = Float((elasSlider.value)/100)
             
-            self.dismissViewControllerAnimated(true, completion: { () -> Void in
+            self.dismiss(animated: true, completion: { () -> Void in
                 
-                let viewController = UIApplication.sharedApplication().windows[0].rootViewController?.childViewControllers[0] as? ViewController
+                let viewController = UIApplication.shared.windows[0].rootViewController?.childViewControllers[0] as? ViewController
                 viewController?.changeBackground(true)
                 
             })
         }
     }
 
-    @IBAction func onDoneButtonTapped(sender: UIButton) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func onDoneButtonTapped(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
     }
 
-    @IBAction func onGravSliderChanged(sender: UISlider) {
+    @IBAction func onGravSliderChanged(_ sender: UISlider) {
         
         let currentValue = Float(sender.value)
         var gmult = currentValue/Float(100.0)
@@ -104,7 +104,7 @@ class MenuViewController: UIViewController {
         
     }
 
-    @IBAction func onElasSliderChanged(sender: UISlider) {
+    @IBAction func onElasSliderChanged(_ sender: UISlider) {
         let currentValue = Float(sender.value)
         let elasMult = currentValue/100.0
         elasMultLabel.text = String(format:"%.2f",elasMult)

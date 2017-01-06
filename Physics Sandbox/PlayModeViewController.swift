@@ -17,7 +17,7 @@ class PlayModeViewController: UIViewController, UICollisionBehaviorDelegate {
     var collisionBehavior = UICollisionBehavior()
     var gravity : UIGravityBehavior!
     var prop : Properties!
-    let screenSize: CGRect = UIScreen.mainScreen().bounds
+    let screenSize: CGRect = UIScreen.main.bounds
     
     let pi = M_PI
     
@@ -29,11 +29,11 @@ class PlayModeViewController: UIViewController, UICollisionBehaviorDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if motionManager.accelerometerAvailable {
+        if motionManager.isAccelerometerAvailable {
             motionManager.accelerometerUpdateInterval = 0.1
-            motionManager.startAccelerometerUpdatesToQueue(NSOperationQueue()) {
+            motionManager.startAccelerometerUpdates(to: OperationQueue()) {
                 (data, error) in
-                dispatch_async(dispatch_get_main_queue()) {
+                DispatchQueue.main.async {
                     let xx = data!.acceleration.x
                     let yy = data!.acceleration.y
                     
@@ -47,10 +47,10 @@ class PlayModeViewController: UIViewController, UICollisionBehaviorDelegate {
         }
         
         if prop.gravityMag == 0.00101936799 {
-            self.view.backgroundColor = UIColor(patternImage: imageResize(UIImage(named: "space")!, sizeChange: CGSizeMake(screenSize.width,screenSize.height)))
+            self.view.backgroundColor = UIColor(patternImage: imageResize(UIImage(named: "space")!, sizeChange: CGSize(width: screenSize.width,height: screenSize.height)))
         }
         else {
-            self.view.backgroundColor = UIColor(patternImage: imageResize(UIImage(named:"background")!, sizeChange: CGSizeMake(screenSize.width, screenSize.height)))
+            self.view.backgroundColor = UIColor(patternImage: imageResize(UIImage(named:"background")!, sizeChange: CGSize(width: screenSize.width, height: screenSize.height)))
         }
         
             dynamicAnimator = UIDynamicAnimator(referenceView: view)
@@ -64,7 +64,7 @@ class PlayModeViewController: UIViewController, UICollisionBehaviorDelegate {
         }
         collisionBehavior = UICollisionBehavior(items: allObjects)
         collisionBehavior.translatesReferenceBoundsIntoBoundary = true
-        collisionBehavior.collisionMode = .Everything
+        collisionBehavior.collisionMode = .everything
         collisionBehavior.collisionDelegate = self
         dynamicAnimator.addBehavior(collisionBehavior)
         for index in allObjects {
@@ -88,10 +88,10 @@ class PlayModeViewController: UIViewController, UICollisionBehaviorDelegate {
     
     var item : Item!
 
-    @IBAction func onStuffBeingDragged(sender: UIPanGestureRecognizer) {
-        if (sender.state == UIGestureRecognizerState.Began) {
+    @IBAction func onStuffBeingDragged(_ sender: UIPanGestureRecognizer) {
+        if (sender.state == UIGestureRecognizerState.began) {
             for index in allObjects {
-                if CGRectContainsPoint(index.frame, sender.locationInView(view)) {
+                if index.frame.contains(sender.location(in: view)) {
                     
                     item = index
                     gravity.removeItem(index)
@@ -102,14 +102,14 @@ class PlayModeViewController: UIViewController, UICollisionBehaviorDelegate {
         
         
         if let a = item {
-            let panGesture = sender.locationInView(view)
-            a.center = CGPointMake(panGesture.x, panGesture.y)
-            dynamicAnimator.updateItemUsingCurrentState(a)
-            if sender.state == UIGestureRecognizerState.Ended {
-                let dragVelocity = sender.velocityInView(view)
+            let panGesture = sender.location(in: view)
+            a.center = CGPoint(x: panGesture.x, y: panGesture.y)
+            dynamicAnimator.updateItem(usingCurrentState: a)
+            if sender.state == UIGestureRecognizerState.ended {
+                let dragVelocity = sender.velocity(in: view)
                 
-                var dragPush = UIPushBehavior(items: [a], mode: UIPushBehaviorMode.Instantaneous)
-                dragPush.pushDirection = CGVectorMake(dragVelocity.x, dragVelocity.y)
+                let dragPush = UIPushBehavior(items: [a], mode: UIPushBehaviorMode.instantaneous)
+                dragPush.pushDirection = CGVector(dx: dragVelocity.x, dy: dragVelocity.y)
                 dragPush.magnitude = sqrt((dragVelocity.x*dragVelocity.x)+(dragVelocity.y*dragVelocity.y))/500
                 dynamicAnimator.addBehavior(dragPush)
                 
@@ -120,22 +120,22 @@ class PlayModeViewController: UIViewController, UICollisionBehaviorDelegate {
         }
             }
 
-    @IBAction func onRebuildButtonTapped(sender: UIButton) {
+    @IBAction func onRebuildButtonTapped(_ sender: UIButton) {
         motionManager.stopAccelerometerUpdates()
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
-    func imageResize(imageObj:UIImage, sizeChange:CGSize)-> UIImage {
+    func imageResize(_ imageObj:UIImage, sizeChange:CGSize)-> UIImage {
         
         let hasAlpha = false
         let scale: CGFloat = 0.0
         
         UIGraphicsBeginImageContextWithOptions(sizeChange, !hasAlpha, scale)
-        imageObj.drawInRect(CGRect(origin: CGPointZero, size: sizeChange))
+        imageObj.draw(in: CGRect(origin: CGPoint.zero, size: sizeChange))
         
         let scaledImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext() // !!!
-        return scaledImage
+        return scaledImage!
     }
     
 

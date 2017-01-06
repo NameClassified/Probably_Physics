@@ -222,13 +222,16 @@
 					EF5405FE1B502CD60069C5D4 = {
 						CreatedOnToolsVersion = 7.0;
 						DevelopmentTeam = UNDYDAPXXH;
+						LastSwiftMigration = 0810;
 					};
 					EF5406121B502CD70069C5D4 = {
 						CreatedOnToolsVersion = 7.0;
+						LastSwiftMigration = 0810;
 						TestTargetID = EF5405FE1B502CD60069C5D4;
 					};
 					EF54061D1B502CD70069C5D4 = {
 						CreatedOnToolsVersion = 7.0;
+						LastSwiftMigration = 0810;
 						TestTargetID = EF5405FE1B502CD60069C5D4;
 					};
 				};
@@ -447,6 +450,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pan.ProbablyPhysics;
 				PRODUCT_NAME = "Probably Physics";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -461,6 +465,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pan.ProbablyPhysics;
 				PRODUCT_NAME = "Probably Physics";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -473,6 +478,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hawthorne.Physics-SandboxTests";
 				PRODUCT_NAME = "Probably Physics";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Probably Physics.app/Probably Physics";
 			};
 			name = Debug;
@@ -485,6 +491,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hawthorne.Physics-SandboxTests";
 				PRODUCT_NAME = "Probably Physics";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Probably Physics.app/Probably Physics";
 			};
 			name = Release;
@@ -496,6 +503,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hawthorne.Physics-SandboxUITests";
 				PRODUCT_NAME = "Probably Physics";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = "Physics Sandbox";
 				USES_XCTRUNNER = YES;
 			};
@@ -508,6 +516,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hawthorne.Physics-SandboxUITests";
 				PRODUCT_NAME = "Probably Physics";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = "Physics Sandbox";
 				USES_XCTRUNNER = YES;
 			};

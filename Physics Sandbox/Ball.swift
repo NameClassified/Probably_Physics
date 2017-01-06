@@ -22,7 +22,7 @@ class Ball: Item {
     {
         
         super.init(x: x,y: y, h: 30, w: 30)
-        self.backgroundColor = UIColor.purpleColor()
+        self.backgroundColor = UIColor.purple
         self.layer.cornerRadius = 15
         self.clipsToBounds = true
         
